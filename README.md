@@ -19,6 +19,7 @@ Should you want to access the promise detection/use that this module uses, you c
 
 ```
 var Promise = require('promisify-patch').getPromiseImplementation();
+if (typeof Promise !== 'function') throw new Error("No Promise implementation available.');
 ...
   return new Promise(function(resolve, reject){
     ...
