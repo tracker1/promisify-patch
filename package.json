@@ -1,0 +1,28 @@
+{
+  "name": "promisify-patch",
+  "version": "1.0.0",
+  "description": "Quick patch to enable promises on node callback-style functions.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tracker1/promisify-patch.git"
+  },
+  "keywords": [
+    "promise",
+    "patch",
+    "callback",
+    "promisify",
+    "browserify"
+  ],
+  "author": "Michael J. Ryan <tracker1@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tracker1/promisify-patch/issues"
+  },
+  "homepage": "https://github.com/tracker1/promisify-patch"
+}
