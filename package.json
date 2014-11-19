@@ -1,6 +1,6 @@
 {
   "name": "promisify-patch",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Quick patch to enable promises on node callback-style functions.",
   "main": "index.js",
   "dependencies": {},

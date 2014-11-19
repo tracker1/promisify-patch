@@ -12,8 +12,15 @@ function getModule(name) {
 module.exports = function getPromise() {
   if (g.Promise) return g.Promise;
   
-  //don't attempt to load shims for browsers
-  if (w && w.document && w.navigator) return;
+  //browser window
+  if (w && w.document && w.navigator) {
+    //if Q is available, use it
+    if (w.Q && w.Q.Promise) return w.Q.Promise;
+    if (w.Q && w.Q.promise) return w.Q.promise;
+    
+    //not available
+    throw new Error("Missing an EcmaScript 6 Promises implementation.");  
+  }
   
   // use _global.require so browserify doesn't attempt to load these
   try { return getModule('es6-promise'); } catch(err) {}
@@ -21,12 +28,9 @@ module.exports = function getPromise() {
   try { return getModule('bluebird'); } catch(err) {}
   try { 
     //wrap Q
-    var q = getModule('q'); 
-    return function(resolver) {
-      var def = q.defer();
-      resolver(def.resolve.bind(def), def.reject.bind(def));
-      return def.promise;
-    }
+    var q = getModule('q');
+    if (q.Promise) return q.Promise; //latest
+    if (q.promise) return q.promise; //older
   } catch(err) { console.log(err); console.log(err.stack); }
   
   throw new Error("Missing an EcmaScript 6 Promises implementation.");
