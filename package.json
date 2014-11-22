@@ -1,9 +1,11 @@
 {
   "name": "promisify-patch",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Quick patch to enable promises on node callback-style functions.",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "i-promise": "^1.0.0"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

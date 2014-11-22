@@ -1,6 +1,6 @@
 'use strict';
 
-var getPromise = require('./get-promise');
+var Promise = require('i-promise');
 
 module.exports = promisify;
 
@@ -10,11 +10,10 @@ function promisify() {
   var args = Array.prototype.slice.call(arguments);
   
   //get the promises implementatin
-  var p = getPromise();
-  if (!p) throw new Error("Missing Promise implementation.");
-  
+  if (!Promise) throw new Error("Missing Promise implementation.");
+
   //return a new promise - all other errors will be in the promise
-  return new p(function(resolve, reject){
+  return new Promise(function(resolve, reject){
     try {
       var fn = args.shift();
 
