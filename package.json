@@ -1,18 +1,12 @@
 {
   "name": "promisify-patch",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Quick patch to enable promises on node callback-style functions.",
   "main": "index.js",
   "dependencies": {
-    "i-promise": "^1.0.2"
+    "i-promise": "^1.0.4"
   },
   "devDependencies": {},
-  "optionalDependencies": {
-    "bluebird": "^2.0.0",
-    "es6-promise": "^2.0.0",
-    "es6-promises": "^1.0.0",
-    "q": "^1.0.0"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
