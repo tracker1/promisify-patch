@@ -1,15 +1,16 @@
 'use strict';
 
-var getPromise = require('./get-promise');
-var promisify = require('./promisify');
 var patched = false;
 var originalPatch = null;
 
-exports = module.exports = promisify;
+exports = module.exports = require('./promisify');
 exports.getPromiseImplementation = getPromise;
 exports.patch = patch;
 exports.unpatch = unpatch;
 
+function getPromiseImplementation() {
+  return require('i-promise');
+}
 
 function patch() {
   if (patched) return; //already patched
