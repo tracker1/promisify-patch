@@ -1,10 +1,12 @@
 'use strict';
 
-var patched = false;
-var originalPatch = null;
+var promisify = require('./promisify')
+    ,patched = false
+    ,originalPatch = null
+    ;
 
-exports = module.exports = require('./promisify');
-exports.getPromiseImplementation = getPromise;
+exports = module.exports = promisify;
+exports.getPromiseImplementation = getPromiseImplementation;
 exports.patch = patch;
 exports.unpatch = unpatch;
 
